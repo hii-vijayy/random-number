@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(244, 247, 250);
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh; 
+            flex-direction: column; 
+        }
+
+        .heading {
+            position: fixed; 
+            top: 0; 
+            width: 100%;  
+            background-color: azure;
+            padding: 5px;
+            margin: 0;   
+        }
+
+        h2 {
+            font-size: 30px;
+            font-family: "Satisfy";
+            margin: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(234, 206, 244);
+            padding: 100px 50px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        #num {
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: skyblue;
+        }
+
+        h3{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h2>Random Number Generator</h2>
+    </div>
+    <div class="container">
+        <h3>Click To Generate Number</h3>
+        <input class="output" id="num" type="text">
+        <button class="btn" id="generate_btn">Generate</button>
+    </div>
+
+    <script>
+        let gen_btn=document.getElementById('generate_btn')
+        let random_num=document.getElementById('num')
+
+        gen_btn.addEventListener('click', randomNumber)
+
+        function randomNumber(e){
+            let newNum=Math.floor(Math.random()*100)+1
+            random_num.value=newNum
+        }
+    </script>
+</body>
+</html>
